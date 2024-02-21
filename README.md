@@ -117,48 +117,19 @@ Node exporter allows Prometheus to record system data, such as CPU utilization, 
 ## Grafana Dashboards
 ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)
 
+
+## Pre-Configured Dashboards:
+**Note these 3rd party dashboards have many missing parts and should be used as examples only**
+1. Teku Dashboard:
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
+[JSON file here.](https://github.com/Consensys/teku/blob/434481f858a235ad1e3d8880921e0c5b70e3fcb2/dashboard/teku-dashboard-grafana.json)
+
+2. 
+
+
 JSON file for Dashboard to upload to your own Grafana setup:
-```json
-{
-  "annotations": {
-    "list": [
-      {
-        "builtIn": 1,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
-  },
-  },
-  "time": {
-    "from": "now-2d",
-    "to": "now"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ]
-  },
-  "timezone": "",
-  "title": "D22",
-  "uid": "",
-  "version": 1,
-  "weekStart": ""
+
+     
 }
 ```
 
