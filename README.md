@@ -155,9 +155,11 @@ JSON file for Dashboard to upload to your own Grafana setup:
     ]
   },
   "timezone": "",
-  "title": "StratisEVM22",
-  "uid": "13111",
+  "title": "D22",
+  "uid": "",
   "version": 1,
   "weekStart": ""
 }
 ```
+
+## Still working on Dashboard..
