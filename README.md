@@ -89,7 +89,7 @@ For ease of managment of your firewall settings.
        If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
     8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
     9. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
-     ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/Screenshot%202024-02-21%20at%2018.03.53.png)
+     ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/prometheus.png)
    10. All green means no issues with connections, firelwalls... etc.
 
 
@@ -115,20 +115,20 @@ Node exporter allows Prometheus to record system data, such as CPU utilization, 
 ** Run node_exporter on its own Screen.
 
 ## Grafana Dashboards
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/strax_grafana.png)
 
 
 ## Pre-Configured Dashboards:
 To import pre-configured dashboards, copy the their JSON contents and paste them in them in Garfana: 
 __Goto__ Dashboards > New > Import > 'Import via dashboard JSON model' >= Paste JSON.
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/importgrafanadashboard.png)
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/importgrafanadashboard.png)
 
 
 **Note these 3rd party dashboards have many missing parts and should be used as examples only**
 
 
 1. Node Exporter Full Dashboard.
-   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Node%20Exporter%20Full.png)  
    [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
 
    
