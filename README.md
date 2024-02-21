@@ -115,7 +115,7 @@ Node exporter allows Prometheus to record system data, such as CPU utilization, 
 ** Run node_exporter on its own Screen.
 
 ## Grafana Dashboards
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strxgrafanadashboard.png)
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)
 
 JSON file for Dashboard to upload to your own Grafana setup:
 ```json
