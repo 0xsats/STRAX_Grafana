@@ -38,7 +38,7 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
   3. To bring back session terminal window (Reattach):
      Use `screen -r <session_id>`. <session_id>=1234 for Geth client terminal obtained from `screen -ls`.
 
-     Details and Guides for using Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
+     Details and Guides for using GNU Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
    
 ### Uncomplicated Firewall (UFW)
 For ease of managment of your firewall settings.
@@ -84,7 +84,7 @@ For ease of managment of your firewall settings.
         ````
        `CTRL O`-`Enter`save.`CTRL X` exit editor.
 
-    5. Start a Screen for Prometheues: `screen -S Prometheues`
+    5. Start a GNU Screen for Prometheues: `screen -S Prometheues`
     6. Run Prometheues from within its directory: `./prometheus`
        If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
     8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
@@ -112,7 +112,7 @@ Grafana must now be installed to provide the graphical component of the data ana
 ### Node Exporter  
 Node exporter allows Prometheus to record system data, such as CPU utilization, memory use, CPU temperature, and disk usage.  
 4. Download / Install [Node Exporter](https://prometheus.io/download/#node_exporter).  
-** Run node_exporter on its own Screen.  
+** Run node_exporter on its own GNU Screen.  
 
 ## Grafana Dashboards  
 ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/strax_grafana.png)  
