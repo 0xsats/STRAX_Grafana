@@ -17,7 +17,7 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
 `sudo apt install screen` 
 
 2. Start a Screen named session: 
-   `screen -S session_name`
+   `screen -S <session_name>`
 
    Example: `screen -S Geth`
    
@@ -36,7 +36,7 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
    2 Sockets in /run/screens/S-linuxize.
    ```
   3. To bring back session terminal window (Reattach):
-     Use `screen -r session_id`. session_id=1234 for Geth client terminal obtained from `screen -ls`.
+     Use `screen -r <session_id>`. <session_id>=1234 for Geth client terminal obtained from `screen -ls`.
 
      Details and Guides for using Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
    
@@ -52,12 +52,12 @@ For ease of managment of your firewall settings.
     1. [Official guide and installation for Prometheues here:](https://prometheus.io/docs/prometheus/latest/getting_started/).
     2. Extract the Prometheus archive and enter it's new directory.
        ```shell
-       tar xvfz prometheus-*.tar.gz
+       tar -xvfz prometheus-*.tar.gz
        cd prometheus-*
        ```
     3. Locate and open/edit the YML file:
        ```shell
-       sudo nano /etc/prometheus/prometheus.yml
+       sudo nano /Directory/to/prometheus.yml
        ```
     4. YML config:
        ```shell
@@ -82,10 +82,11 @@ For ease of managment of your firewall settings.
 
     5. Start a Screen for Prometheues: `screen -S Prometheues`
     6. Run Prometheues from within its directory: `./prometheus`
-    7. Detach: `CTRL`+`A`+`D`
+       If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
+    8. Detach: `CTRL`+`A`+`D`
+    9. Navigate to http://localhost:9090/graph in a browser. It will present a page similar to this:
+     ![Uploading Screenshot 2024-02-21 at 18.01.17.png…]()
 
-
-          
 
 
 ### Grafana
