@@ -130,16 +130,18 @@ To import pre-configured dashboards, copy the their JSON contents and paste them
 
 1. Node Exporter Full Dashboard.
    
+   [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
+   
    ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Node%20Exporter%20Full.png)
    
-   [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
-
    
-2. Teku Dashboard (closest yet) [github](https://github.com/Consensys/teku/):  
+2. Teku Dashboard (closest yet) [github](https://github.com/Consensys/teku/):
+   
+   [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
    
    ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Tekudashboard.png)
    
-   [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
+   
    
    
 3. https://grafana.com/grafana/dashboards/?search=validator
