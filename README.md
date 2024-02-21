@@ -1,12 +1,14 @@
 # STRAX_Grafana
 
 This README assumes that: 
-You are using Prysm to run a STRAX node and a validator client on a __linux__ Ubuntu or Debian VPS or local server.
+1. You are using Prysm to run a STRAX node and a validator client on a __linux__ Ubuntu or Debian VPS or local server.
    1. Configured GETH an execution node using an execution-layer client.
    2. Configure a Beacon node using Prysm, a consensus-layer client.
    3. Configure a Validator client and stake STRAX using Prysm.
 
-      ** Guide here: [StratisEVM](https://github.com/stratisproject/StratisEVM).
+   ** Node configuration guide here: [StratisEVM](https://github.com/stratisproject/StratisEVM).
+2. Installed GNU Screen (Details below).
+3. Configured your firewall (Details below).
 
 ### Screen
 Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple terminal processes and sessions in the background without the need to keep the terminal windows open.
@@ -34,13 +36,14 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
    ```
   3. To bring back session terminal window:
      Use `screen -r session_id`. session_id=1234 for Geth client terminal obtained from `screen -ls`.
+
+     Details and Guides for using Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
    
-   
-when running your Geth execution client
+### Uncomplicated Firewall (UFW)
+Uncomplicated Firewall (UFW) is an easy to use front-end to iptables for firewall management utilities. 
+[How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server).   
 
 
-
-[How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/)
 
 
    
