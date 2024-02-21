@@ -135,7 +135,7 @@ To import pre-configured dashboards, copy the their JSON contents and paste them
    [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
 
    
-2. Teku Dashboard (closest to STRAX validators):  
+2. Teku Dashboard (closest yet) [github](https://github.com/Consensys/teku/):  
    
    ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Tekudashboard.png)
    
