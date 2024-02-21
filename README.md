@@ -5,10 +5,11 @@ This README assumes that:
    1. Configured GETH an execution node using an execution-layer client.
    2. Configure a Beacon node using Prysm, a consensus-layer client.
    3. Configure a Validator client and stake STRAX using Prysm.
-
+   
    ** Node configuration guide here: [StratisEVM](https://github.com/stratisproject/StratisEVM).
-2. Installed GNU Screen (Details below).
-3. Configured your firewall (Details below).
+   
+3. Installed GNU Screen (Details below).
+4. Configured your firewall (Details below).
 
 ### Screen
 Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple terminal processes and sessions in the background without the need to keep the terminal windows open.
@@ -20,9 +21,9 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
 
    Example: `screen -S Geth`
    
-   Then run the client/prossess: `./geth --...`
+   Then run the client/processes: `./geth --...`
    
-   Then take session to background (detach) with `CTRL`+`A`+`D `.
+   Then take session to background (Detach) with: `CTRL`+`A`+`D `.
 
    Use `screen -ls` for list of sessions.
    
@@ -34,20 +35,17 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
           1236.Validator	(Date/Time)	(Detached)
    2 Sockets in /run/screens/S-linuxize.
    ```
-  3. To bring back session terminal window:
+  3. To bring back session terminal window (Reattach):
      Use `screen -r session_id`. session_id=1234 for Geth client terminal obtained from `screen -ls`.
 
      Details and Guides for using Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
    
 ### Uncomplicated Firewall (UFW)
-Uncomplicated Firewall (UFW) is an easy to use front-end to iptables for firewall management utilities. 
+For ease of managment of your firewall settings. 
 [How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server).   
 
-
-
-
    
-Install the following on the same system/server:
+### Install the following on the same system/server:
 ### Prometheus
 1. Install Prometheus.
   Prometheus must first be installed to fetch the data from the beacon node and validator for Grafana to display.
@@ -79,11 +77,16 @@ Install the following on the same system/server:
          - job_name: 'node_exporter'
            static_configs:
              - targets: ['localhost:9100']
-         - job_name: 'slasher'
-           static_configs:
-             - targets: ['localhost:8082']
-        ```
-       ** Note: Running a 'slasher' job isn't mandatory for staking, only people that are running a slasher can find the metrics at the port 8082. For those that don't run a slasher, all instructions that follow remain correct.
+        ````
+       `CTRL O`-`Enter`save.`CTRL X` exit editor.
+
+    5. Start a Screen for Prometheues: `screen -S Prometheues`
+    6. Run Prometheues from within its directory: `./prometheus`
+    7. Detach: `CTRL`+`A`+`D`
+
+
+          
+
 
 ### Grafana
 3. Install Grafana.
