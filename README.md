@@ -137,7 +137,7 @@ To import pre-configured dashboards, copy the their JSON contents and paste them
    
 2. Teku Dashboard (closest to STRAX validators):  
    
-   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Tekudashboard.png)
    
    [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
    
