@@ -119,12 +119,24 @@ Node exporter allows Prometheus to record system data, such as CPU utilization, 
 
 
 ## Pre-Configured Dashboards:
-**Note these 3rd party dashboards have many missing parts and should be used as examples only**
-1. Teku Dashboard:
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
-[JSON file here.](https://github.com/Consensys/teku/blob/434481f858a235ad1e3d8880921e0c5b70e3fcb2/dashboard/teku-dashboard-grafana.json)
+To import pre-configured dashboards, copy the their JSON contents and paste them in them in Garfana: 
+__Goto__ Dashboards > New > Import > 'Import via dashboard JSON model' >= Paste JSON.
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/importgrafanadashboard.png)
 
-2. 
+
+**Note these 3rd party dashboards have many missing parts and should be used as examples only**
+
+
+1. Node Exporter Full Dashboard.
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
+   [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
+
+   
+2. Teku Dashboard:
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
+   [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
+
+3. 
 
 
 JSON file for Dashboard to upload to your own Grafana setup:
