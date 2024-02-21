@@ -90,7 +90,7 @@ For ease of managment of your firewall settings.
     8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
     9. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
      ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/prometheus.png)
-   10. All green means no issues with connections, firelwalls... etc.
+   10. All green means no issues with connections, firewalls... etc.
 
 
 ### Grafana
@@ -109,40 +109,42 @@ Grafana must now be installed to provide the graphical component of the data ana
 
 
 
-### Node Exporter
+### Node Exporter  
 Node exporter allows Prometheus to record system data, such as CPU utilization, memory use, CPU temperature, and disk usage.  
 4. Download / Install [Node Exporter](https://prometheus.io/download/#node_exporter).  
-** Run node_exporter on its own Screen.
+** Run node_exporter on its own Screen.  
 
-## Grafana Dashboards
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/strax_grafana.png)
+## Grafana Dashboards  
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/strax_grafana.png)  
 
 
 ## Pre-Configured Dashboards:
-To import pre-configured dashboards, copy the their JSON contents and paste them in them in Garfana: 
-__Goto__ Dashboards > New > Import > 'Import via dashboard JSON model' >= Paste JSON.
-![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/importgrafanadashboard.png)
+To import pre-configured dashboards, copy the their JSON contents and paste them in them in Garfana:   
+`__Goto__ Dashboards > New > Import > 'Import via dashboard JSON model' >= Paste JSON`.  
+
+![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/importgrafanadashboard.png)  
 
 
 **Note these 3rd party dashboards have many missing parts and should be used as examples only**
 
 
 1. Node Exporter Full Dashboard.
-   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Node%20Exporter%20Full.png)  
+   
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Node%20Exporter%20Full.png)
+   
    [JSON File](https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json)
 
    
-2. Teku Dashboard:
-   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)  
+2. Teku Dashboard (closest to STRAX validators):  
+   
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_grafana.png)
+   
    [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
-
+   
+   
 3. 
 
 
-JSON file for Dashboard to upload to your own Grafana setup:
 
-     
-}
-```
 
 ## Still working on Dashboard..
