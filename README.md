@@ -41,10 +41,14 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
      Details and Guides for using Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
    
 ### Uncomplicated Firewall (UFW)
-For ease of managment of your firewall settings. 
-[How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server).   
+For ease of managment of your firewall settings.
+1. __Always__ make sure to allow SSH for firewall. `sudo ufw allow ssh`
+2.  Check status `sudo ufw status`
+[How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server).     
 
-   
+
+  
+
 ### After all clients are running without issues, Install the following on the same system/server:
 ### Prometheus
 1. Install Prometheus.
@@ -90,17 +94,25 @@ For ease of managment of your firewall settings.
 
 
 ### Grafana
-3. Install Grafana.
-   Grafana must now be installed to provide the graphical component of the data analytics.
+Grafana must now be installed to provide the graphical component of the data analytics.  
+3. Install Grafana:
    1. [Download Grafana](https://grafana.com/grafana/download) and install it.
       
    2. Open http://localhost:3000 in a browser. By default, the username and the password to this panel are both ‘admin’.
     
-   3. Create a data source and choose Prometheus, then enter in the URL field http://localhost:9090.
+   3. Create a data source and choose Prometheus, then enter in the URL field http://localhost:9090 (VPS/Server IP).
       
    4. Click on Save & Test.
+   5. A green notification saying 'Successfully queried the Prometheus API.' should now be visible.  
+
+   **any errors check ports/firewalls.
 
 
 
 ### Node Exporter
-4. Install Node Exporter.
+Node exporter allows Prometheus to record system data, such as CPU utilization, memory use, CPU temperature, and disk usage.  
+4. Download / Install [Node Exporter](https://prometheus.io/download/#node_exporter).  
+** Run node_exporter on its own Screen.
+
+## Grafana Dashboards
+
