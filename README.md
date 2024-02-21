@@ -86,12 +86,21 @@ For ease of managment of your firewall settings.
     8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
     9. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
      ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/Screenshot%202024-02-21%20at%2018.03.53.png)
-   10. 
-
+   10. All green means no issues with connections, firelwalls... etc.
 
 
 ### Grafana
 3. Install Grafana.
+   Grafana must now be installed to provide the graphical component of the data analytics.
+   1. [Download Grafana](https://grafana.com/grafana/download) and install it.
+      
+   2. Open http://localhost:3000 in a browser. By default, the username and the password to this panel are both ‘admin’.
+    
+   3. Create a data source and choose Prometheus, then enter in the URL field http://localhost:9090.
+      
+   4. Click on Save & Test.
+
+
 
 ### Node Exporter
 4. Install Node Exporter.
