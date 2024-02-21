@@ -142,7 +142,7 @@ To import pre-configured dashboards, copy the their JSON contents and paste them
    [JSON file](https://raw.githubusercontent.com/Consensys/teku/master/dashboard/teku-dashboard-grafana.json)
    
    
-3. 
+3. https://grafana.com/grafana/dashboards/?search=validator
 
 
 
