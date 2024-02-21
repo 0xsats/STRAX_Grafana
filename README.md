@@ -8,7 +8,7 @@ This README assumes that:
    
    ** Node configuration guide here: [StratisEVM](https://github.com/stratisproject/StratisEVM).
    
-3. Installed GNU Screen (Details below).
+3. Installed GNU Screen (Details below) (OPTIONAL).
 4. Configured your firewall (Details below).
 
 ### Screen
@@ -45,7 +45,7 @@ For ease of managment of your firewall settings.
 [How To Setup a Firewall with UFW on an Ubuntu and Debian Cloud Server](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server).   
 
    
-### Install the following on the same system/server:
+### After all clients are running without issues, Install the following on the same system/server:
 ### Prometheus
 1. Install Prometheus.
   Prometheus must first be installed to fetch the data from the beacon node and validator for Grafana to display.
@@ -83,9 +83,10 @@ For ease of managment of your firewall settings.
     5. Start a Screen for Prometheues: `screen -S Prometheues`
     6. Run Prometheues from within its directory: `./prometheus`
        If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
-    8. Detach: `CTRL`+`A`+`D`
-    9. Navigate to http://localhost:9090/graph in a browser. It will present a page similar to this:
-     ![Uploading Screenshot 2024-02-21 at 18.01.17.png…]()
+    8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
+    9. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
+     ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/Screenshot%202024-02-21%20at%2018.03.53.png)
+   10. 
 
 
 
