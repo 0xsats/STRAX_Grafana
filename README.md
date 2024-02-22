@@ -87,10 +87,16 @@ For ease of managment of your firewall settings.
     5. Start a GNU Screen for Prometheues: `screen -S Prometheues`
     6. Run Prometheues from within its directory: `./prometheus`
        If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
-    8. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
-    9. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
+    7. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
+    8. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
      ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/prometheus.png)
-   10. All green means no issues with connections, firewalls... etc.
+   9. All green means no issues with connections, firewalls... etc.  
+      
+**Note on other ruuning services when port is used by other application:**
+```shell
+msg="Error starting web server, exiting gracefully" err="listen tcp 0.0.0.0:9090: bind: address already in use"
+```
+you can use `lsof -i :<port_num#>` to get the `pid` and then use `sudo kill -9 <pid>` to kill the program and free up the port so you can run service again.  
 
 
 ### Grafana
