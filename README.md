@@ -66,8 +66,32 @@ RestartSec=7s
 WantedBy=multi-user.target
 ```  
 
-**DANGER**
-It is recommended to delay the restart of a node with RestartSec in the case of node crashes. It's possible that when a node crashes, consensus votes in GRANDPA aren't persisted to disk. In this case, there is potential to equivocate when immediately restarting. What can happen is the node will not recognize votes that didn't make it to disk, and will then cast conflicting votes. Delaying the restart will allow the network to progress past potentially conflicting votes, at which point other nodes will not accept them.
+**DANGER:**
+```It is recommended to delay the restart of a node with RestartSec in the case of node crashes. It's possible that when a node crashes, consensus votes in GRANDPA aren't persisted to disk. In this case, there is potential to equivocate when immediately restarting. What can happen is the node will not recognize votes that didn't make it to disk, and will then cast conflicting votes. Delaying the restart will allow the network to progress past potentially conflicting votes, at which point other nodes will not accept them.```
+
+**Notes:**
+- Modify the [Service] Section. Find the [Service] section in the service file, and add or modify the following lines:
+
+```
+Restart=always
+RestartSec=3
+```
+
+Restart=always. This Ensures that the service will always restart, no matter how it was stopped or crashed.
+RestartSec=7s. This ensures that the service will wait for 7 seconds before it restarts. This can be adjusted based on your needs.
+
+- Save and Close. Save the file and exit the text editor. If you’re using nano, press CTRL + X followed by Y (to confirm saving) and then press Enter.
+- Reload systemd. For systemd to recognize the changes you made to the service file, you need to reload its configuration:
+
+`sudo systemctl daemon-reload`  
+
+- Test the Configuration. Stop the service and observe if it restarts automatically:
+
+`sudo systemctl stop example.service`
+
+- After a few seconds (based on the RestartSec value you set), the service should restart itself.
+- Enable the Service. If you want your service to start on boot and utilize the auto-restart feature.
+`sudo systemctl enable example.service`
 
 To enable this to autostart on bootup run:
 
@@ -85,6 +109,7 @@ You can tail the logs with journalctl like so:
 
 `journalctl -f -u geth`
 
+** That’s it! You’ve successfully set up your Linux service to restart automatically. Regularly monitoring logs and service statuses will ensure that everything runs smoothly.  
 
    
 ### Uncomplicated Firewall (UFW)
