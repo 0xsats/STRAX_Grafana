@@ -45,7 +45,7 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
 Using systemd for a Validator Node
 You can run your validator as a systemd process so that it will automatically restart on server reboots or crashes (and helps to avoid getting slashed!).
 
-Before following this guide you should have already set up your validator by following the How to validate article.
+Before following this guide you should have already set up your validator by following the How to validate article above.
 
 First create a new unit file called geth.service in `/etc/systemd/system/`.
 
