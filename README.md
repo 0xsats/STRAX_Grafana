@@ -8,7 +8,7 @@ This README assumes that:
    
    ** Node configuration guide here: [StratisEVM](https://github.com/stratisproject/StratisEVM).
    
-3. Installed GNU Screen (Details below) (OPTIONAL).
+3. Installed GNU Screen (Details below) (OPTIONAL) or use **systemd** (preffered).
 4. Configured your firewall (Details below).
 
 ### Screen
@@ -39,6 +39,51 @@ Screen or GNU Screen is a terminal multiplexer. It allows you to run multiple te
      Use `screen -r <session_id>`. <session_id>=1234 for Geth client terminal obtained from `screen -ls`.
 
      Details and Guides for using GNU Screen here: [How To Setup & Use Linux Screen](https://linuxize.com/post/how-to-use-linux-screen/).
+
+
+### SYSTEMD:
+Using systemd for a Validator Node
+You can run your validator as a systemd process so that it will automatically restart on server reboots or crashes (and helps to avoid getting slashed!).
+
+Before following this guide you should have already set up your validator by following the How to validate article.
+
+First create a new unit file called polkadot-validator.service in /etc/systemd/system/.
+
+touch /etc/systemd/system/polkadot-validator.service
+
+In this unit file you will write the commands that you want to run on server boot / restart.
+
+[Unit]
+Description=Polkadot Validator
+
+[Service]
+ExecStart=PATH_TO_POLKADOT_BIN --validator --name SHOW_ON_TELEMETRY
+Restart=always
+RestartSec=120
+
+[Install]
+WantedBy=multi-user.target
+
+DANGER
+It is recommended to delay the restart of a node with RestartSec in the case of node crashes. It's possible that when a node crashes, consensus votes in GRANDPA aren't persisted to disk. In this case, there is potential to equivocate when immediately restarting. What can happen is the node will not recognize votes that didn't make it to disk, and will then cast conflicting votes. Delaying the restart will allow the network to progress past potentially conflicting votes, at which point other nodes will not accept them.
+
+To enable this to autostart on bootup run:
+
+systemctl enable polkadot-validator.service
+
+Start it manually with:
+
+systemctl start polkadot-validator.service
+
+You can check that it's working with:
+
+systemctl status polkadot-validator.service
+
+You can tail the logs with journalctl like so:
+
+journalctl -f -u polkadot-validator
+
+
    
 ### Uncomplicated Firewall (UFW)
 For ease of managment of your firewall settings.
