@@ -220,9 +220,11 @@ To import pre-configured dashboards, copy the their JSON contents and paste them
    ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/Tekudashboard.png)
    
    
-   
-   
 3. https://grafana.com/grafana/dashboards/?search=validator
+
+4. Grafana Dashboard for Stratis from ETH validators:
+   ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/strax_grafana.png)
+   [JSON File](https://github.com/0xsats/STRAX_Grafana/blob/main/strax_dashboard.json)
 
 
 
