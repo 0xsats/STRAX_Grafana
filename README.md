@@ -160,7 +160,7 @@ For ease of managment of your firewall settings.
     6. Run Prometheues from within its directory: `./prometheus`
        If errors regarding "bind: address already in use", check <PID> with `lsof -i :9090` then kill with `sudo kill -9 <pid>` then start Prometheues again.
     7. Once Prometheus is running smoothly Detach: `CTRL`+`A`+`D`
-    8. Navigate to `http://194.233.70.161:9090/graph` in a browser or directly to `http://194.233.70.161:9090/targets` to check . It will present a page similar to this:
+    8. Navigate to `http://server_ip:9090/graph` in a browser or directly to `http://server_ip:9090/targets` to check . It will present a page similar to this:
      ![alt text](https://github.com/0xsats/STRAX_Grafana/blob/main/img/prometheus.png)
    9. All green means no issues with connections, firewalls... etc.  
       
