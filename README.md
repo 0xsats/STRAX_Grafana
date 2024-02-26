@@ -47,41 +47,43 @@ You can run your validator as a systemd process so that it will automatically re
 
 Before following this guide you should have already set up your validator by following the How to validate article.
 
-First create a new unit file called polkadot-validator.service in /etc/systemd/system/.
+First create a new unit file called geth.service in `/etc/systemd/system/`.
 
-touch /etc/systemd/system/polkadot-validator.service
+`nano /etc/systemd/system/geth.service`
 
-In this unit file you will write the commands that you want to run on server boot / restart.
+In this unit file you will write the commands that you want to run on server boot / restart.  
 
+```shell
 [Unit]
-Description=Polkadot Validator
+Description=geth
 
 [Service]
-ExecStart=PATH_TO_POLKADOT_BIN --validator --name SHOW_ON_TELEMETRY
+ExecStart=PATH_TO_geth_BIN --validator --name SHOW_ON_TELEMETRY
 Restart=always
-RestartSec=120
+RestartSec=7s
 
 [Install]
 WantedBy=multi-user.target
+```  
 
 DANGER
 It is recommended to delay the restart of a node with RestartSec in the case of node crashes. It's possible that when a node crashes, consensus votes in GRANDPA aren't persisted to disk. In this case, there is potential to equivocate when immediately restarting. What can happen is the node will not recognize votes that didn't make it to disk, and will then cast conflicting votes. Delaying the restart will allow the network to progress past potentially conflicting votes, at which point other nodes will not accept them.
 
 To enable this to autostart on bootup run:
 
-systemctl enable polkadot-validator.service
+`systemctl enable geth.service`
 
 Start it manually with:
 
-systemctl start polkadot-validator.service
+`systemctl start geth.service`
 
 You can check that it's working with:
 
-systemctl status polkadot-validator.service
+`systemctl status geth.service`
 
 You can tail the logs with journalctl like so:
 
-journalctl -f -u polkadot-validator
+`journalctl -f -u geth`
 
 
    
